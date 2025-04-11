@@ -7,8 +7,8 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 const genrateAccessAndRefreshTokens = async (userId) => {
     try {
         const user = await User.findById(userId)
-        const accessToken = user.generateRefreshToken()
-        const refreshToken = user.generateAccessToken()
+        const refreshToken = user.generateRefreshToken()
+        const accessToken = user.generateAccessToken()
 
         user.refreshToken = refreshToken
         await user.save({ validateBeforeSave: false })
